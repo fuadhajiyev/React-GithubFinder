@@ -1,0 +1,16 @@
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    border: 1px solid #e1e4e8;   
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(100deg,#dbedff 38%,#ebfff0);
+    padding: 30px;
+}
+.card-img{
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}

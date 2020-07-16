@@ -1,0 +1,20 @@
+.alert {
+    width: 50%;
+    margin: 0 auto;
+
+}
+
+.alert-light {
+    border-radius: 4px;
+    border: 1px solid #cb2431;
+    padding: 27px;
+
+}
+
+.Alert-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cb2431;
+    font-style: italic;
+}
