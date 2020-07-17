@@ -1,14 +1,21 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useContext } from "react";
 import Repos from "../../repos/Repos";
 import Spinner from "../../layout/spinner/Spinner";
 import { Link } from "react-router-dom";
+import GithubContext from "../../../context/github/githubContext";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { FcCancel } from "react-icons/fc";
 
 import "./User.css";
 
-const User = ({ loading, repos, getUser, getUserRepos, user, match }) => {
+
+const User = ({  match }) => {
+
+  const githubContext = useContext(GithubContext);
+
+  const { getUser, loading, user, repos, getUserRepos } = githubContext;
+
+
   useEffect(() => {
     getUser(match.params.login);
     getUserRepos(match.params.login);
@@ -39,7 +46,7 @@ const User = ({ loading, repos, getUser, getUserRepos, user, match }) => {
         <Link to="/" className="btn">
           Back to Search
         </Link>
-        <span style={{ marginLeft:"10px" }}>Hireable:</span>
+        <span style={{ marginLeft: "10px" }}>Hireable:</span>
         {hireable ? (
           <IoIosCheckmarkCircleOutline color="green" size="2em" />
         ) : (
@@ -91,13 +98,7 @@ const User = ({ loading, repos, getUser, getUserRepos, user, match }) => {
   );
 };
 
-User.propTypes = {
-  loading: PropTypes.bool,
-  user: PropTypes.object,
-  repos: PropTypes.array.isRequired,
-  getUser: PropTypes.func.isRequired,
-  getUserRepos: PropTypes.func.isRequired,
-};
+
 
 User.defaultProps = {};
 export default User;

@@ -1,11 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import UserItem from "../userItem/UsersItem";
 import Spinner from "../../layout/spinner/Spinner";
 import PropTypes from "prop-types";
+import GithubContext from '../../../context/github/githubContext';
 import Radium from "radium";
 import "./Users.css";
 
-const Users = ({ users, loading }) => {
+const Users = () => {
+
+  const githubContext = useContext(GithubContext)
+  const { loading, users} = githubContext
   const spinner = loading ? (
     <Spinner />
   ) : (

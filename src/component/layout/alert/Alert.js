@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Alert.css";
 import { BsFillInfoCircleFill } from "react-icons/bs";
-const Alert = ({ alert }) => {
+import AlertContext from "../../../context/alert/alertContext";
+
+const Alert = () => {
+  const alertContext = useContext(AlertContext);
+
+  const { alert } = alertContext;
   return (
     alert !== null && (
       <div className={`alert alert-${alert.type}`}>
         <span className="Alert-msg">
           {" "}
-          <BsFillInfoCircleFill style={{margin:'0 10px'}}/> {alert.msg}{" "}
+          <BsFillInfoCircleFill
+            color="#cb2431"
+            style={{ margin: "0 10px" }}
+          />{" "}
+          {alert.msg}{" "}
         </span>
       </div>
     )

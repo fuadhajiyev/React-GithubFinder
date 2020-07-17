@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import GithubContext from "../../context/github/githubContext";
 import PropTypes from "prop-types";
 import RepoItem from "./RepoItem";
 import "./Repos.css";
 
-
-const Repos = ({ repos }) => {
+const Repos = () => {
+  const githubContext = useContext(GithubContext);
+    const { repos } = githubContext
   return (
     <ul className="card-list">
       {repos.map((repo) => (

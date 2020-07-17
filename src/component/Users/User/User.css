@@ -1,16 +1,17 @@
-
 .user-header {
     display: flex;
     align-items: center;
     padding-bottom: 15px;
 
 }
-.card-body{
+
+.card-body {
     justify-content: flex-start;
     width: 100%;
 }
+
 @media(max-width:599px) {
-    .card-body{
+    .card-body {
         flex-direction: column;
         align-items: center;
     }
@@ -20,16 +21,20 @@
 .card-body-left {
     padding: 0 25px;
 }
+
 .card-body-right {
     padding: 0 25px;
 }
-.card-body-left-title span{
+
+.card-body-left-title span {
     display: block;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
-.card-body-left-img{
+
+.card-body-left-img {
     justify-content: center;
 }
+
 .card-body-left-img img {
     width: 160px;
     border-radius: 50%;
@@ -40,47 +45,53 @@
     text-align: center;
     width: max-content;
 }
+
 @media(max-width:900px) {
     .card-body-left-title {
-      
-        width:100%;
+        width: 100%;
     }
 
 }
 
 .card-body-left-title h1 {
-
-    margin: 0;
+    margin: 5px;
 }
-.card-footer{
+
+.card-footer {
     padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 @media(max-width:599px) {
-    .card-footer{
-       display: flex;
-       flex-direction: column;
-     text-align: center; 
+    .card-footer {
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
     }
-
 }
 
-.badge{
+.badge {
     border-radius: 4px;
     padding: 4px 8px;
-    margin: 0 5px 10px 0;;
+    margin: 0 5px 10px 0;
     color: #eee;
 }
-.badge-primary{
+
+.badge-primary {
     background-color: #cb2431;
 }
-.badge-success{
+
+.badge-success {
     background-color: green;
 }
-.badge-light{
+
+.badge-light {
     background-color: #fff;
     border: 1px solid #eee;
     color: var(--main-color);
 }
-.badge-dark{
+
+.badge-dark {
     background-color: var(--main-color);
 }

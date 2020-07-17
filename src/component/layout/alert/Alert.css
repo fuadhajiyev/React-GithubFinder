@@ -1,20 +1,24 @@
 .alert {
     width: 50%;
     margin: 0 auto;
-
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+@media(max-width:599px) {
+    .alert {
+        width: 100%;
+    }
 }
 
 .alert-light {
-    border-radius: 4px;
-    border: 1px solid #cb2431;
-    padding: 27px;
-
+    border: 1px solid #eee;
+    padding: 15px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .Alert-msg {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #cb2431;
-    font-style: italic;
+    color: var(--main-color);
 }

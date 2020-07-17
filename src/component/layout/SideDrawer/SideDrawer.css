@@ -17,9 +17,7 @@
 @media(min-width:699px) {
     .side-drawer {
         display: none;
-
     }
-
 }
 
 .side-drawer.open {

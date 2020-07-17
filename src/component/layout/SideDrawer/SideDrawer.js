@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationItem from "../Navbar/NavigationItems";
 import "./SideDrawer.css";
-import { GoMarkGithub } from "react-icons/go";
+import { GoLogoGithub } from "react-icons/go";
 
 const sideDrawer = (props) => {
 
@@ -12,7 +12,7 @@ const sideDrawer = (props) => {
   return (
     <div className={drawerClasses}>
       <div style={GitLogo}>
-        <GoMarkGithub size={"3rem"} color={"#eee"} style={{ margin: "15px"}} />
+        <GoLogoGithub size={"4rem"} color={"#eee"} style={{ margin: "15px"}} />
         <nav>
           <NavigationItem />
         </nav>

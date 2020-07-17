@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment, useState, useContext } from "react";
+import GithubContext from "../../context/github/githubContext";
+import AlertContext from "../../context/alert/alertContext";
 import "./Search.css";
 
-const Search = ({ clearUsers, showClear, searchUsers, setAlert }) => {
+const Search = () => {
+  const githubContext = useContext(GithubContext);
+  const alertContext = useContext(AlertContext);
+
   const [text, setText] = useState("");
+
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (text === "") {
-      setAlert("Please enter something", "light");
+      alertContext.setAlert("Please enter something", "light");
     } else {
-      searchUsers(text);
+      githubContext.searchUsers(text);
       setText("");
     }
   };
@@ -21,7 +26,7 @@ const Search = ({ clearUsers, showClear, searchUsers, setAlert }) => {
   };
 
   return (
-    <div>
+    <Fragment>
       <form onSubmit={onSubmit} className="form">
         <input
           type="text"
@@ -31,24 +36,17 @@ const Search = ({ clearUsers, showClear, searchUsers, setAlert }) => {
           onChange={onChange}
         />
         <input type="submit" value="Search" className="search-btn" />
-        {showClear && (
+        {githubContext.users.length > 0 && (
           <input
             className="clear-btn"
             readOnly
             value="Clear"
-            onClick={clearUsers}
+            onClick={githubContext.clearUsers}
           />
         )}
       </form>
-    </div>
+    </Fragment>
   );
-};
-
-Search.propTypes = {
-  searchUsers: PropTypes.func.isRequired,
-  clearUsers: PropTypes.func.isRequired,
-  showClear: PropTypes.bool.isRequired,
-  setAlert: PropTypes.func.isRequired,
 };
 
 export default Search;

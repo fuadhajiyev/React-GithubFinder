@@ -20,10 +20,8 @@ input {
 }
 @media(max-width:599px) {
     input{
-
         width: 100%;
     }
-
 }
 .search-btn {
     background-color: #2ea44f;
@@ -38,7 +36,7 @@ input {
 .clear-btn {
     background-color: #cb2431;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .clear-btn:hover {
