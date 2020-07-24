@@ -2,9 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 React app to search Github profiles. This app uses the Context API along with the useContext and useReducer hooks for state management 
+
 In the project directory, you can run: https://githubfinder1733.netlify.app/
 
-1### `npm install`
+1### `npm install` <br>
 2### `npm start`
 
 Runs the app in the development mode.<br />
