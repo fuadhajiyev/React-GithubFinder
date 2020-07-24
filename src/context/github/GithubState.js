@@ -2,10 +2,10 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import GithubContext from "./githubContext";
 import GithubReducer from "./githubReducer";
-import {
-  REACT_APP_GITHUB_CLIENT_ID,
-  REACT_APP_GITHUB_CLIENT_SECRET,
-} from "../../Base";
+// import {
+//   REACT_APP_GITHUB_CLIENT_ID,
+//   REACT_APP_GITHUB_CLIENT_SECRET,
+// } from "../../Base";
 import {
   SEARCH_USERS,
   SET_LOADING,
@@ -25,13 +25,10 @@ let githubClientSecret;
 //   githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
 // }
 
-if (process.env.NODE_ENV !== "production") {
-  githubClientId = REACT_APP_GITHUB_CLIENT_ID;
-  githubClientSecret = REACT_APP_GITHUB_CLIENT_SECRET;
-} else {
-  githubClientId = process.env.GITHUB_CLIENT_ID;
-  githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
-}
+
+githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
+githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+
 
 const GithubState = (props) => {
   const initialState = {

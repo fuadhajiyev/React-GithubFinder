@@ -40,6 +40,7 @@ const User = ({  match }) => {
   } = user;
 
   if (loading) return <Spinner />;
+
   return (
     <div className="User-info">
       <div className="user-header">
